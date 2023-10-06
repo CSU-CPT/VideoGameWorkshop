@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bei3n4nvrf0qf"]
+
+[ext_resource type="PackedScene" uid="uid://bxpfca62w3qvx" path="res://Scenes/Walls.tscn" id="1_hbiid"]
+[ext_resource type="PackedScene" uid="uid://b1h3iovjuudqr" path="res://Scenes/Player/paddle.tscn" id="2_o7ni3"]
+[ext_resource type="PackedScene" uid="uid://b1ai4pgxhrusf" path="res://Scenes/Ball.tscn" id="3_1i6vj"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="LeftWall" parent="Walls" instance=ExtResource("1_hbiid")]
+position = Vector2(0, 324)
+scale = Vector2(5, 25)
+
+[node name="RightWall" parent="Walls" instance=ExtResource("1_hbiid")]
+position = Vector2(1152, 324)
+scale = Vector2(5, 25)
+
+[node name="TopWall" parent="Walls" instance=ExtResource("1_hbiid")]
+position = Vector2(576, 0)
+rotation = 1.5708
+scale = Vector2(5, 45)
+
+[node name="BottomWall" parent="Walls" instance=ExtResource("1_hbiid")]
+position = Vector2(576, 648)
+rotation = 1.5708
+scale = Vector2(5, 45)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Paddle" parent="." instance=ExtResource("2_o7ni3")]
+position = Vector2(68, 324)
+
+[node name="Ball" parent="." instance=ExtResource("3_1i6vj")]
+position = Vector2(661, 324)
